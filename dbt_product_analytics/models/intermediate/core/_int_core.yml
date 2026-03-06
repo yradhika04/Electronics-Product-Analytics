@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: int_core__sales_enriched
+    description: "Sales data with unit cost and unit price added, one row per order line item"
+    columns:
+      - name: unit_cost_usd
+        data_tests:
+          - not_null
+      - name: unit_price_usd
+        data_tests:
+          - not_null
