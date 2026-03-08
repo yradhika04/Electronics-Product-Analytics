@@ -1,0 +1,99 @@
+version: 2
+
+models:
+  - name: fct_core__sales
+    description: "Sales data with cost, revenue, profit, and number of delivery days added, one row per order line item"
+    columns:
+      - name: order_number
+        description: "Unique ID for each order"
+        data_tests:
+          - not_null
+      - name: line_item
+        description: "Identifies individual products purchased as part of an order"
+        data_tests:
+          - not_null
+      - name: line_item_cost_usd
+        description: "The expense incurred to produce this quantity of the product, unit_cost_usd * quantity"
+        data_tests:
+          - not_null
+      - name: line_item_revenue_usd
+        description: "The total income generated from selling this quantity of the product, unit_price_usd * quantity"
+        data_tests:
+          - not_null
+      - name: line_item_profit_usd
+        description: "The gross profit per line item, (unit_price_usd - unit_cost_usd) * quantity"
+        data_tests:
+            - not_null
+      - name: delivery_days
+        description: "Number of days taken to deliver a line item (per order) ordered online"
+
+    data_tests:
+      - unique:
+          arguments:
+            column_name: "order_number || '-' || line_item"
+
+  - name: dim_core__customers
+    description: "Customer data with customer age added, one row per customer"
+    columns:
+      - name: customer_key
+        description: "Primary key to identify customers"
+        data_tests:
+          - unique
+          - not_null
+      - name: age
+        description: "Calculated from birthday"
+
+  - name: dim_core__products
+    description: "Product data with unit_profit added, one row per product"
+    columns:
+      - name: product_key
+        description: "Primary key to identify products"
+        data_tests:
+          - unique
+          - not_null
+      - name: unit_profit_usd
+        description: "Profit per unit of the product calculated as unit_price_usd - unit_cost_usd"
+        data_tests:
+          - not_null
+
+  - name: dim_core__stores
+    description: "Store data with store age added, one row per store"
+    columns:
+      - name: store_key
+        description: "Primary key to identify stores"
+        data_tests:
+          - unique
+          - not_null
+      - name: store_age
+        description: "The number of years the store has been open for"
+
+  - name: dim_core__dates
+    description: "Dimension date table for date-based metrics, one row per date"
+    columns:
+      - name: date_key
+        description: "The full date, primary key"
+        data_tests:
+          - unique
+          - not_null
+      - name: year_num
+        description: "The year"
+      - name: quarter
+        description: "Quarter of the year"
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: [1,2,3,4]
+      - name: month_num
+        description: "The month number"
+      - name: month_name
+        description: "The name of the month"
+      - name: week_iso
+        description: "The week number following ISO 8601 standards"
+      - name: day_of_week_iso
+        description: "They day of the week following ISO 8601 standards, where Monday is 1 and Sunday is 7"
+      - name: day_num
+        description: "The day number"
+      - name: day_name
+        description: "The name of the day"
+      - name: is_weekend
+        description: "Whether the date is on a weekend (Saturday/Sunday) or not"

@@ -1,0 +1,4 @@
+data_tests:
+  - name: assert_fct_core__sales_delivery_days_positive
+    description: "Number of days taken to deliver an order should always be > 0.
+            So this returns records where delivery days < 0."
