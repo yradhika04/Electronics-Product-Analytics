@@ -5,6 +5,9 @@ An **end-to-end analytics pipeline** for a global **electronics retailer**. I tr
 top product categories, average order value (AOV), customer lifetime value (CLV/LTV), and 
 customer retention cohort analysis**.
 
+### Tableau Public Dashboard
+[View Dashboard](https://public.tableau.com/views/electronics_product_analytics/Overview?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 ### Tech Stack
 - Airbyte
 - Snowflake Data Warehouse
@@ -28,17 +31,14 @@ graph TD
 ```
 
 
-### Tableau Public Dashboard
-[View Dashboard](https://public.tableau.com/views/electronics_product_analytics/Overview?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
-
-### Interesting Insights
+### Insights
 - Total **revenue** across 2016–2021 was **\$55.76M** with a **profit** of **$32.66M** (~59% profit margin)
-- **November–January** are the **strongest months** likely driven by the **holiday season** in the company's key markets. 
+- **November-January** are the **strongest months**, likely driven by the **holiday season** in the company's key markets. 
 This is followed by a consistent **revenue dip every April** suggesting a post-holiday season slowdown
 - Computers and Home Appliances are the top revenue-generating categories
-- US stores, online orders, and UK stores are the top revenue-generating locations
+- The United States, online orders, and the United Kingdom are the top revenue-generating locations
 - **AOV** is **\$2.12K** and **historical CLV/LTV** is **\$5.47K**, indicating a high-value customer base
-- The 2016 and 2017 retention cohorts show higher customer retention in year 2 than year 1. Interesting pattern that 
+- The 2016 and 2017 retention cohorts show higher customer retention in year 2 than year 1. This pattern 
 warrants further investigation
 
 ### Recommendations
@@ -66,7 +66,7 @@ warrants further investigation
 - All monetary values are in USD
 - Revenue and profit are product-level only and cannot be classified as gross or net figures as I don't have
 data about the company's overall expenses 
-- 2021 data is partial as it only covers January–February. It is included in all visuals but should be interpreted as a partial year
+- 2021 data is partial as it only covers January-February. It is included in all visuals but should be interpreted as a partial year
 - Customer data had Windows-1252 encoding which corrupted names with special characters, 
 converted it to UTF-8 via a Python script before ingestion
 - Data source: [Maven Analytics Datasets](https://mavenanalytics.io/data-playground/global-electronics-retailer)
