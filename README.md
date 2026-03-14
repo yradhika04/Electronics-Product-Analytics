@@ -58,7 +58,7 @@ warrants further investigation
 - Product return and refund data to get a more accurate measure of revenue and profit
 
 ### Repo Structure
-- **dbt_product_analytics/** - dbt project containing all models, tests, and documentation
+- **dbt_sales_analytics/** - dbt project containing all models, tests, and documentation
 - **scripts/** - Python scripts for data cleaning and CSV exports
 - **README.md** - project overview
 
