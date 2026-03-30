@@ -1,4 +1,4 @@
-# Electronics Sales & Customer Analytics
+# Electronics Sales and Customer Analytics
 
 An **end-to-end analytics pipeline** for a global **electronics retailer**. I transformed raw 
 **sales data** from 2016-2021 across **26K orders** and **12K customers** into actionable insights about **revenue performance, 
