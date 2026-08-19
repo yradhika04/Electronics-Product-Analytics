@@ -2,6 +2,8 @@
 
 An **end-to-end analytics pipeline** for a global **electronics retailer**, analysing **26K orders** and **12K customers** (2016-2021). I delivered insights on **revenue trends, customer value (AOV: $2.12K, LTV: $5.47K), product performance, and retention cohorts**. Also identified a **recurring 76% post-holiday revenue drop** and recommended **targeted Q2 campaigns** to stabilize seasonal demand.
 
+The development was structured using GitHub Issues and a Kanban [board](https://github.com/users/yradhika04/projects/2).
+
 ### Tableau Public Dashboard
 [View Dashboard](https://public.tableau.com/views/electronics_product_analytics/Overview?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
